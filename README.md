@@ -23,7 +23,7 @@ According to the API:
 
 > What that says is, “if the client wants HTML in response to this action, just respond as we would have before, but if the client wants XML, return them the list of people in XML format.” (Rails determines the desired response format from the HTTP Accept header submitted by the client.)
 
-If we want to respond to the action with JSON (which we will for our API), we can write:
+Note that we don't actually want to use XML; we much prefer JSON. If we want to respond to the action with JSON (which we will for our API), we can write:
 
 ```ruby
 respond_to do |format|
@@ -49,5 +49,7 @@ end
 ## Instructions
 
 1. Implement the API actions and get the tests to pass! You'll probably want to start by defining some routes.
-2. HINT: You will want to change `protect_from_forgery with: :exception` to `protect_from_forgery with: :null_session`.
-3. HINT: You can return a response with a status and an empty body with `render nothing: true, status: 200`.
+2. Hints: 
+  - You can [change the default response](http://stackoverflow.com/questions/10681816/render-json-instead-of-html-as-default) format in your `routes.rb` file.
+  - You will want to change `protect_from_forgery with: :exception` to `protect_from_forgery with: :null_session`.
+  - You can return a response with a status and an empty body with `render nothing: true, status: 200`.
