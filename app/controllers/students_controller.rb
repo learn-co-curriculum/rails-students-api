@@ -11,9 +11,7 @@ class StudentsController < ApplicationController
 
   def show
     begin
-      student_hash = Student.find(params[:id]).attributes
-      student_hash["message"] = "A message!"
-      respond_with student_hash
+      @student = Student.find(params[:id])
     rescue
       raise "Invalid Student ID!"
     end
