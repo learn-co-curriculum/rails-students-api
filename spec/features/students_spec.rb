@@ -62,9 +62,9 @@ describe "StudentsController" do
       expect(student_hash["name"]).to eq("John Smith")
     end
 
-    it "returns Student with a message field" do
+    it "returns Student with the associated Cohort" do
       student_hash = JSON.parse(response.body)
-      expect(student_hash["message"]).to eq("A message!")
+      expect(student_hash["cohort"]["name"]).to eq("Ruby-000")
     end
 
     it "returns a 200 status code" do
