@@ -46,6 +46,30 @@ class PeopleController < ApplicationController
 end
 ```
 
+## Using JBuilder
+
+In order to customize the JSON returned from a controller-action, you can use the `jbuilder` gem.
+
+According to the Jbuilder documentation, if you have a MessagesController, JSON from a `show` action is rendered from a partial in `app/views/message/show.json.jbuilder`. So:
+
+```ruby
+# app/views/message/show.json.jbuilder
+
+json.(@message, :description, :created_at, :updated_at)
+```
+
+Would build:
+
+```ruby
+{
+  "description": "Your description attribute",
+  "created_at": "2011-10-29T20:45:28-05:00",
+  "updated_at": "2011-10-29T20:45:28-05:00"
+}
+```
+
+Take a look at the [Jbuilder documentation](https://github.com/rails/jbuilder) to figure out how to include a Student's corresponding Cohort in the `show` action.
+
 ## Instructions
 
 1. Implement the API actions and get the tests to pass! You'll probably want to start by defining some routes.
