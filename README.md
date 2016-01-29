@@ -77,4 +77,4 @@ Take a look at the [Jbuilder documentation](https://github.com/rails/jbuilder) t
   - You can [change the default response](http://stackoverflow.com/questions/10681816/render-json-instead-of-html-as-default) format in your `routes.rb` file.
   - You will want to change `protect_from_forgery with: :exception` to `protect_from_forgery with: :null_session`.
   - You can return a response with a status and an empty body with `render nothing: true, status: 200`.
-<a href='https://learn.co/lessons/rails-students-api' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-students-api' title='Write Your Own API in Rails'>Write Your Own API in Rails</a> on Learn.co and start learning to code for free.</p>
